@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Jiwa - Beli Produk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Scamsuransi</h1>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="history.html">Histori</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2>Asuransi Jiwa</h2>
+        <div class="container">
+        <img src="https://png.pngtree.com/png-clipart/20230406/original/pngtree-life-insurance-line-icon-png-image_9030298.png"
+            alt="Asuransi Jiwa"
+            style="width:100%;border-radius:8px;margin-bottom:1rem;">
+        <p>
+            Memberikan jaminan finansial kepada keluarga Anda apabila risiko meninggal
+            dunia terjadi pada pemegang polis.
+        </p>
+        <ul style="text-align:left;margin:1rem 0;">
+            <li>Uang pertanggungan hingga Rp10 miliar.</li>
+            <li>Manfaat tambahan untuk kecelakaan.</li>
+            <li>Premi dihitung sesuai usia & besaran pertanggungan.</li>
+        </ul>
+
+        <hr style="margin:1.5rem 0;">
+
+        <h3>Formulir Pembelian</h3>
+        <form id="lifeForm">
+            <label>Nama Lengkap sesuai KTP</label>
+            <input type="text" id="namaJiwa" required>
+
+            <label>Tanggal Lahir</label>
+            <input type="date" id="tglLahirJiwa" required>
+
+            <label>Besaran Pertanggungan</label>
+            <select id="pertanggungan" required>
+            <option value="">--Pilih--</option>
+            <option value="1000000000">Rp1.000.000.000</option>
+            <option value="2000000000">Rp2.000.000.000</option>
+            <option value="3500000000">Rp3.500.000.000</option>
+            <option value="5000000000">Rp5.000.000.000</option>
+            <option value="10000000000">Rp10.000.000.000</option>
+            </select>
+
+            <button type="button" onclick="hitungPremiJiwa()">Hitung Premi</button>
+            <p id="premiJiwa" style="margin-top:1rem;font-weight:bold;"></p>
+
+            <button type="submit" style="margin-top:1rem;">Checkout</button>
+        </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Scamsuransi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histori Pembelian - Scamsuransi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Scamsuransi</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main class="main">
+  <h2>Histori Pembelian</h2>
+    <div class="container">
+      <table class="table-history">
+        <thead>
+          <tr>
+            <th>Produk</th>
+            <th>Tanggal</th>
+            <th>Harga</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tabelHistori"></tbody>
+      </table>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <p>© 2025 Scamsuransi</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = JSON.parse(localStorage.getItem("historiPembelian") || "[]");
+      const tbody = document.getElementById("tabelHistori");
+      if (data.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='4'>Belum ada pembelian.</td></tr>";
+      } else {
+        tbody.innerHTML = data.map(item => `
+          <tr>
+            <td>${item.produk}</td>
+            <td>${item.tanggal}</td>
+            <td>Rp ${Number(item.harga).toLocaleString("id-ID")}</td>
+            <td>${item.status}</td>
+          </tr>`).join("");
+      }
+    });
+  </script>
+</body>
+</html>
