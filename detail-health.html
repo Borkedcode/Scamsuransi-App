@@ -8,69 +8,67 @@
 </head>
 <body>
     <header class="header">
-        <h1>AsuransiKu</h1>
+        <h1>Scamsuransi</h1>
         <nav>
-        <a href="index.html">Home</a>
-        <a href="history.html">Histori</a>
+        <a href="index.html" class="btn">Home</a>
+        <a href="history.html" class="btn">Histori</a>
         </nav>
     </header>
 
     <main class="main">
-        <h2>Asuransi Kesehatan</h2>
-        <div class="container">
-        <img src="https://static.thenounproject.com/png/1236334-200.png"
-            alt="Asuransi Kesehatan"
-            style="width:100%;border-radius:8px;margin-bottom:1rem;">
-        <p>
-            Perlindungan kesehatan bagi Anda dan keluarga, meliputi rawat inap,
-            rawat jalan, dan manfaat tambahan lainnya.
-        </p>
-        <ul style="text-align:left;margin:1rem 0;">
-            <li>Menanggung biaya rawat inap dan operasi.</li>
-            <li>Pilihan rumah sakit rekanan luas.</li>
-            <li>Premi menyesuaikan usia & kondisi kesehatan.</li>
-            <li>Manfaat tambahan: check-up tahunan, vaksin, dsb.</li>
-        </ul>
+        <div class="hero-form-container bg-kesehatan">
+            <div class="product-description-column">
+                <h2>Asuransi Kesehatan</h2>
+                <p>
+                    Perlindungan kesehatan bagi Anda dan keluarga, meliputi rawat inap,
+                    rawat jalan, dan manfaat tambahan lainnya.
+                </p>
+                <ul style="text-align:left;margin:1rem 0;">
+                    <li>Menanggung biaya rawat inap dan operasi.</li>
+                    <li>Pilihan rumah sakit rekanan luas.</li>
+                    <li>Premi menyesuaikan usia & kondisi kesehatan.</li>
+                    <li>Manfaat tambahan: check-up tahunan, vaksin, dsb.</li>
+                </ul>
+            </div>
 
-        <hr style="margin:1.5rem 0;">
+            <div class="hero-form-column">
+            <h3>Formulir Pembelian</h3>
+            <form id="healthForm">
+                <label>Nama Lengkap sesuai KTP</label>
+                <input type="text" id="nama" required>
 
-        <h3>Formulir Pembelian</h3>
-        <form id="healthForm">
-            <label>Nama Lengkap sesuai KTP</label>
-            <input type="text" id="nama" required>
+                <label>Tanggal Lahir</label>
+                <input type="date" id="tglLahir" required>
 
-            <label>Tanggal Lahir</label>
-            <input type="date" id="tglLahir" required>
+                <label>Pekerjaan</label>
+                <input type="text" id="pekerjaan" required>
 
-            <label>Pekerjaan</label>
-            <input type="text" id="pekerjaan" required>
+                <label>Merokok?</label>
+                <select id="merokok" required>
+                <option value="">--Pilih--</option>
+                <option value="1">Ya</option>
+                <option value="0">Tidak</option>
+                </select>
 
-            <label>Merokok?</label>
-            <select id="merokok" required>
-            <option value="">--Pilih--</option>
-            <option value="1">Ya</option>
-            <option value="0">Tidak</option>
-            </select>
+                <label>Riwayat Hipertensi?</label>
+                <select id="hipertensi" required>
+                <option value="">--Pilih--</option>
+                <option value="1">Ya</option>
+                <option value="0">Tidak</option>
+                </select>
 
-            <label>Riwayat Hipertensi?</label>
-            <select id="hipertensi" required>
-            <option value="">--Pilih--</option>
-            <option value="1">Ya</option>
-            <option value="0">Tidak</option>
-            </select>
+                <label>Diabetes?</label>
+                <select id="diabetes" required>
+                <option value="">--Pilih--</option>
+                <option value="1">Ya</option>
+                <option value="0">Tidak</option>
+                </select>
 
-            <label>Diabetes?</label>
-            <select id="diabetes" required>
-            <option value="">--Pilih--</option>
-            <option value="1">Ya</option>
-            <option value="0">Tidak</option>
-            </select>
+                <button type="button" onclick="hitungPremiHealth()">Hitung Premi</button>
+                <p id="premiHealth" style="margin-top:1rem;font-weight:bold;"></p>
 
-            <button type="button" onclick="hitungPremiHealth()">Hitung Premi</button>
-            <p id="premiHealth" style="margin-top:1rem;font-weight:bold;"></p>
-
-            <button type="submit" style="margin-top:1rem;">Checkout</button>
-        </form>
+                <button type="submit" style="margin-top:1rem;">Checkout</button>
+            </form>
         </div>
     </main>
 
